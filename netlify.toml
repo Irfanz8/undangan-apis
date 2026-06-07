@@ -5,6 +5,7 @@
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["swagger-ui-express", "swagger-jsdoc"]
+  included_files = ["src/**/*.js"]
 
 [[redirects]]
   from = "/*"

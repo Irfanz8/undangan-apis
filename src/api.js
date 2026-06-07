@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const serverless = require('serverless-http');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
@@ -22,12 +23,12 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
-        description: 'Local server',
+        url: '/',
+        description: 'Current server',
       },
     ],
   },
-  apis: ['./src/*.js'], // Path to API docs
+  apis: [path.join(process.cwd(), 'src', '*.js')], // Path to API docs
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
