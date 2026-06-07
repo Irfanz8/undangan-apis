@@ -1,0 +1,17 @@
+[build]
+  command = ""
+  publish = "public"
+  functions = "."
+
+[functions]
+  node_bundler = "esbuild"
+
+[functions.api]
+  directory = "src"
+  handler = "api.handler"
+
+# Redirect all requests to index.html for SPA (if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
