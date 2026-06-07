@@ -1,6 +1,8 @@
+# Netlify configuration for Express serverless API
 [build]
   command = "npm install"
-  functions = "src"
+  functions = "."
 
 [functions]
   node_bundler = "esbuild"
+  ignored_files = ["src/**"]
